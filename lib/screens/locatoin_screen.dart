@@ -2,18 +2,38 @@ import 'package:flutter/material.dart';
 import '../utilities/constansts.dart';
 
 class LocationScreen extends StatefulWidget {
+  LocationScreen({super.key, required this.locationWeather});
+  var locationWeather;
   @override
   _LocationScreenState createState() => _LocationScreenState();
 }
 
 class _LocationScreenState extends State<LocationScreen> {
+  double? temprature;
+  int? condition;
+  String? cityName;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    updateUi(widget.locationWeather);
+  }
+
+  void updateUi(dynamic weatherData) {
+    temprature = weatherData['main']['temp'];
+    condition = weatherData['weather'][0]['id'];
+    cityName = weatherData['name'];
+    print(condition);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/location_background.jpg'),
+            image: AssetImage('Assets/images/location_background.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
                 Colors.white.withOpacity(0.8), BlendMode.dstATop),
@@ -59,7 +79,7 @@ class _LocationScreenState extends State<LocationScreen> {
                   ],
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(right: 15.0),
                 child: Text(
                   "It's 🍦 time in San Francisco!",
