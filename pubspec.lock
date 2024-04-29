@@ -41,6 +41,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
+  conversion_units:
+    dependency: "direct main"
+    description:
+      name: conversion_units
+      sha256: a0514fb135865e91c47294abfa727c37f68d85b037f9c5b1b0ab031b59176cd7
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.8"
   crypto:
     dependency: transitive
     description:

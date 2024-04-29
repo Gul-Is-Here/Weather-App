@@ -37,6 +37,7 @@ dependencies:
   geolocator: ^11.0.0
   http: ^1.2.1
   flutter_spinkit: ^5.2.1
+  conversion_units: ^0.1.8
 
 dev_dependencies:
   flutter_test:
@@ -61,8 +62,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - Assets/
-    - Assets/images/
+    - assets/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
